@@ -63,9 +63,6 @@ class MainWindow():
         self.input_button = Button(self.master, text = "Select Images Folder",command = self.file_dialog_input_path)
         self.input_button.pack(padx=10,pady=10)
 
-    # def create_separator(self):
-    #     self.master.Separator(self.master,orient=HORIZONTAL).grid(row=2, columnspan=5)
-
     def create_jpeg_field(self):
         self.preview_label = Label(self.master, text="Image Quality (1 - 99) higher number produces better image quality" )
         self.jpeg_quality = IntVar(value=20)

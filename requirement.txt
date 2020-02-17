@@ -1,0 +1,3 @@
+#just type in CMD pip install -r requirements.txt to install dependencies
+opencv-python
+numpy
