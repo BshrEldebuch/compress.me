@@ -21,5 +21,19 @@ Reduces image size,while maintaining the aspect ratio with the best image qualit
 3. Manipulate the resolution of each image with respect to the chosen resolution set by user.
 4. Save the modified images with a .jpg exetension inside a folder called output which is nested inside the input folder for consistency.
 
-### License: GNUv3
+## Get ready-to-use executables 
+Packaged version of this project is available to download [here](https://waleedalrashed.com/apps/compress_me_v2.exe)
+
+
+## Develop 
+Clone this repository to your machine
+````
+cd compress.me-master 
+pip install requirements.txt
+python main.py
+````
+
+---
+### License 
+This project is released under the [GNUv3](LICENSE)
 
