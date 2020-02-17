@@ -29,8 +29,8 @@ Packaged version of this project is available to download [here](https://waleeda
 Clone this repository to your machine
 ````
 cd compress.me-master 
-pip install requirements.txt
-python main.py
+pip install -r requirements.txt
+python3 main.py
 ````
 
 ---
