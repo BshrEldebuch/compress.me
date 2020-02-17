@@ -15,6 +15,11 @@ Reduces image size,while maintaining the aspect ratio with the best image qualit
 3. Click "Start Converting"
 4. You'll find the converted images in a sub-folder called: "Output"
 
+## How it works
+1. Iterate over the input folder's files to find any compatible images.
+2. Read the images via `cv2.imread()` function.
+3. Manipulate the resolution of each image with respect to the chosen resolution set by user.
+4. Save the modified images with a .jpg exetension inside a folder called output which is nested inside the input folder for consistency.
 
-###License: MIT
+### License: GNUv3
 
