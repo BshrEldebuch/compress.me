@@ -93,6 +93,44 @@ class ImageSizeReducer:
     """
     return file_name.split(sep=".")[0]
 
+  def resizeAndPad(img, size):
+    """returns a compressed/stretched image with respect to its original aspect ratio
+
+    Returns:
+        [image] -- scaled image
+
+    Example: 
+      Input: imageOriginal --> Retunrs: imageScaled
+
+    """
+
+    h, w = img.shape[:2]
+    sh, sw = size
+
+    # interpolation method
+    if h > sh or w > sw: # shrinking image
+        interp = cv2.INTER_AREA
+    else: # stretching image
+        interp = cv2.INTER_CUBIC
+
+    # aspect ratio of image
+    aspect = w/h  # if on Python 2, you might need to cast as a float: float(w)/h
+
+    # compute scaling and pad sizing
+    if aspect > 1: # horizontal image
+        new_w = sw
+        new_h = np.round(new_w/aspect).astype(int)
+    elif aspect < 1: # vertical image
+        new_h = sh
+        new_w = np.round(new_h*aspect).astype(int)
+    else: # square image
+        new_h, new_w = sh, sw
+
+    # scale and pad
+    scaled_img = cv2.resize(img, (new_w, new_h), interpolation=interp)
+
+    return scaled_img
+
   def run(self):
     self.folder_reader()
     return self.get_status()
